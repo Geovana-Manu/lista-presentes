@@ -136,5 +136,3 @@ window.onload = () => {
         })
         .catch(err => console.error("Erro ao carregar a lista de presentes:", err));
 };
-
-
