@@ -1,6 +1,11 @@
+/* Reset de box-sizing para evitar que padding aumente a largura */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20px;
+    margin: 10px;
     background-color: #f5f5f5;
     color: #333;
 }
@@ -15,19 +20,21 @@ h1 {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 input {
     padding: 10px;
     margin: 5px 0;
-    width: 250px;
+    width: 100%;
+    max-width: 300px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 14px;
 }
 
 button {
-    padding: 8px 15px;
+    padding: 10px 15px;
     margin: 5px;
     border: none;
     border-radius: 5px;
@@ -36,6 +43,8 @@ button {
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.2s;
+    width: 100%;
+    max-width: 200px;
 }
 
 button:hover {
@@ -53,7 +62,8 @@ button:hover {
     background-color: #fff;
     padding: 15px;
     border-radius: 10px;
-    width: 200px;
+    width: 100%;
+    max-width: 250px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
@@ -81,7 +91,17 @@ button:hover {
     margin-bottom: 20px;
 }
 
-@media(max-width: 500px) {
-    .presente-card { width: 100%; }
-    input { width: 90%; }
+/* Ajustes específicos para telas pequenas */
+@media (max-width: 500px) {
+    body {
+        margin: 5px;
+    }
+
+    .presente-card {
+        max-width: 100%;
+    }
+
+    input, button {
+        max-width: 100%;
+    }
 }
