@@ -93,23 +93,21 @@
 
   // Inicializar exibição
   window.onload = () => {
-      dbRef.once("value", snapshot => {
-          if (snapshot.exists()) {
-              // Firebase já tem dados
-              listaPresentes = snapshot.val();
-              mostrarLista();
-          } else {
-              // Firebase vazio: carregar do JSON do GitHub
-            fetch("https://raw.githubusercontent.com/Geovana-Manu/lista-presentes/acc3f682e04412ad4c374bde27b85aefcd0b0e9c/presentes.json")
-            .then(res => res.json())
-            .then(data => {
-            listaPresentes = data.map(p => ({ ...p, escolhido: false, pessoa: null }));
+    dbRef.on("value", snapshot => { // <- Agora ouve em tempo real
+        if (snapshot.exists()) {
+            listaPresentes = snapshot.val();
             mostrarLista();
-            salvarNoFirebase(); // salva no Firebase
-    })
-    .catch(err => console.error("Erro ao carregar JSON:", err));
+        } else {
+            fetch("https://raw.githubusercontent.com/Geovana-Manu/lista-presentes/acc3f682e04412ad4c374bde27b85aefcd0b0e9c/presentes.json")
+                .then(res => res.json())
+                .then(data => {
+                    listaPresentes = data.map(p => ({ ...p, escolhido: false, pessoa: null }));
+                    mostrarLista();
+                    salvarNoFirebase();
+                })
+                .catch(err => console.error("Erro ao carregar JSON:", err));
+        }
+    });
+};
 
-          }
-      });
-  };
 
