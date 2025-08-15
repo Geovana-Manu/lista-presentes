@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Presentes</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+</head>
+<body>
+    <h1>Lista de Presentes</h1>
+
+    <div class="inputs">
+        <input type="text" id="nomePessoa" placeholder="Digite seu nome">
+        <input type="email" id="emailPessoa" placeholder="Digite seu e-mail">
+    </div>
+
+    <div class="acoes-gerais">
+        <button onclick="desfazerEscolha()">Desfazer Escolha</button>
+    </div>
+
+    <div class="lista-presentes" id="itens"></div>
+
+    <!-- EmailJS SDK clássico -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
