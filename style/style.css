@@ -124,14 +124,15 @@ button:hover {
         margin: 0px 50px 0px 50px;
     }
 
+    .lista-presentes {
+        display: flex;      /* Mantenha o display flex */
+        flex-direction: column; /* Alinha os itens em coluna */
+        align-items: center; /* Centraliza os itens */
+    }
     .presente-card {
         max-width: 100%;
+        width: 100%; /* Garante que o cartão ocupe toda a largura */
         margin-bottom: 10px;
-    }
-
-    .lista-presentes {
-        flex-direction: column;   /* força em coluna */
-        align-items: center;      /* centraliza */
     }
 
     .presente-card strong {
