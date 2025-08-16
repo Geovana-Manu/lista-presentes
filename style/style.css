@@ -129,6 +129,11 @@ button:hover {
         margin-bottom: 10px;
     }
 
+    .lista-presentes {
+        flex-direction: column;   /* força em coluna */
+        align-items: center;      /* centraliza */
+    }
+
     .presente-card strong {
         font-size: 30px;
         max-width: 80%;
