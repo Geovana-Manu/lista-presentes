@@ -5,7 +5,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 10px;
+    margin: 0px;
     background-color: #f5f5f5;
     color: #333;
 }
@@ -83,6 +83,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     transition: background-color 0.4s ease;
+    margin: 10px;
 }
 
 .presente-img {
@@ -121,10 +122,97 @@ button:hover {
     margin-bottom: 20px;
 }
 
+.imgCapa{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.imgCapa img{
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 400px;
+}
+
+.infos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    align-items: center; 
+    margin: 0 auto;
+    background-color: #cff4ca;
+     gap: 20px; 
+}
+
+.infosPedido{
+    width: 90%;
+    background-color: #a2a2a2;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+
+.infosPedido p{
+    width: 100%;
+    font-size: 15px;
+    color: #1e1e1e;
+    text-align: justify;
+}
+
+.infosPedido h1{
+    font-size: 18px;
+    color: black;
+}
+
+.textoGratidao{
+    width: 90%;
+    height: auto;
+    text-align: center;
+    background-color: #54834e;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.textoGratidao p{
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+    text-align: justify;
+}
+
 /* Ajustes específicos para telas pequenas */
 @media (max-width: 768px) {
     body {
-        margin: 0px 50px 0px 50px;
+        margin: 0px 10px 0px 10px;
+    }
+
+    .infos{
+        padding: 10px;
+    }
+
+    .textoGratidao{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .infosPedido{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .infosPedido p,.textoGratidao p{
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .infosPedido h1{
+        font-size: 20px;
     }
 
     .lista-presentes {
@@ -189,6 +277,7 @@ button:hover {
     }
 
     h1{
+        margin-top: 0;
         font-size: 30px;
     }
 
