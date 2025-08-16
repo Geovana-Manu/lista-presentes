@@ -36,10 +36,10 @@
           const li = document.createElement("div");
           li.className = "presente-card";
           const botaoEscolher = item.escolhido
-              ? `<p style="color:red; font-size:14px;">🎁 Este presente já foi escolhido</p>`
-              : `<button onclick="escolherPresente(${i})">Escolher</button>`;
+              ? `<p class="presenteEscolhido">🎁 Este presente já foi escolhido</p>`
+              : `<button onclick="escolherPresente(${i})" class="botaoEscolha">Escolher</button>`;
           li.innerHTML = `
-              <img src="${item.imagem}" alt="${item.nome}" style="width:80px;height:80px;object-fit:cover;border-radius:8px;margin-bottom:8px;">
+              <img src="${item.imagem}" alt="${item.nome}" class="presente-img">
               <strong>${item.nome}</strong><br>
               ${botaoEscolher}
               <a href="${item.sugestao}" target="_blank">Ver sugestão</a>

@@ -33,12 +33,26 @@ input {
     font-size: 14px;
 }
 
-button {
+.botaoEscolha {
     padding: 10px 15px;
     margin: 5px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #70ad68;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    width: 100%;
+    max-width: 200px;
+}
+
+.botaoDesfazer{
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff2a2a;
     color: #fff;
     cursor: pointer;
     font-size: 14px;
@@ -59,7 +73,7 @@ button:hover {
 }
 
 .presente-card {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 15px;
     border-radius: 10px;
     width: 100%;
@@ -68,6 +82,14 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.presente-img {
+    width: 160px;   /* antes era 100px */
+    height: auto;  /* aumenta proporcionalmente */
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 .presente-card strong {
@@ -86,6 +108,11 @@ button:hover {
     text-decoration: underline;
 }
 
+.presenteEscolhido{
+    color:red;
+    font-size:15px;
+}
+
 .acoes-gerais {
     text-align: center;
     margin-bottom: 20px;
@@ -94,14 +121,63 @@ button:hover {
 /* Ajustes específicos para telas pequenas */
 @media (max-width: 500px) {
     body {
-        margin: 5px;
+        margin: 0px 50px 0px 50px;
     }
 
     .presente-card {
         max-width: 100%;
+        margin-bottom: 10px;
     }
 
-    input, button {
-        max-width: 100%;
+    .presente-card strong {
+        font-size: 30px;
+        max-width: 80%;
+        margin-bottom: 5px;
+        text-align: center;
     }
+
+    input{
+        max-width: 100%;
+        padding: 20px;
+        width: 100%;
+        font-size: 35px;
+    }
+
+    .botaoEscolha{
+        max-width: 50%;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .botaoDesfazer{
+        max-width: 100%;
+        padding: 15px;
+        font-size: 30px;
+    }
+
+    h1{
+        font-size: 65px;
+    }
+
+    .presente-img {
+        width: 160px;   /* antes era 100px */
+        height: auto;  /* aumenta proporcionalmente */
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 5px;
+    }
+
+    .presenteEscolhido{
+        color:red; 
+        font-size:25px;
+    }
+
+    .presente-card a {
+        margin: 5px;
+        text-decoration: none;
+        color: hsl(0, 0%, 0%);
+        font-size: 25px;
+    }
+
+    
 }
