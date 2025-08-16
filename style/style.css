@@ -136,6 +136,7 @@ button:hover {
         max-width: 100%;
         width: 100%; /* Garante que o cartão ocupe toda a largura */
         margin-bottom: 10px;
+        margin-top: 10px;
         transition: background-color 0.4s ease;
     }
 
@@ -161,7 +162,7 @@ button:hover {
     .acoes-gerais {
         max-width: 100%;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         margin-top: 0;
     }
 
