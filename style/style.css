@@ -82,6 +82,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background-color 0.4s ease;
 }
 
 .presente-img {
@@ -105,7 +106,9 @@ button:hover {
 }
 
 .presente-card a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    background-color: #70ad68
+    color(rgb(4, 72, 4))
 }
 
 .presenteEscolhido{
@@ -133,10 +136,11 @@ button:hover {
         max-width: 100%;
         width: 100%; /* Garante que o cartão ocupe toda a largura */
         margin-bottom: 10px;
+        transition: background-color 0.4s ease;
     }
 
     .presente-card strong {
-        font-size: 30px;
+        font-size: 20px;
         max-width: 80%;
         margin-bottom: 5px;
         text-align: center;
@@ -146,13 +150,18 @@ button:hover {
         max-width: 100%;
         padding: 20px;
         width: 100%;
-        font-size: 35px;
+        font-size: 25px;
     }
 
     .botaoEscolha{
         max-width: 50%;
-        font-size: 30px;
+        font-size: 25px;
         margin-bottom: 10px;
+    }
+
+    .botaoEscolha:hover{
+        background-color: green;
+        transition: background-color 0.5s ease;
     }
 
     .botaoDesfazer{
@@ -161,8 +170,13 @@ button:hover {
         font-size: 30px;
     }
 
+    .botaoDesfazer:hover{
+        background-color: #a80909;
+        transition: background-color 0.5s ease;
+    }
+
     h1{
-        font-size: 65px;
+        font-size: 55px;
     }
 
     .presente-img {
@@ -175,15 +189,21 @@ button:hover {
 
     .presenteEscolhido{
         color:red; 
-        font-size:25px;
+        font-size:20px;
+        text-align: center;
     }
 
     .presente-card a {
         margin: 5px;
         text-decoration: none;
-        color: hsl(0, 0%, 0%);
+        color: hsl(102, 92%, 36%);
         font-size: 25px;
     }
 
+    .presente-card a:hover {
+        text-decoration: none;
+        color: rgb(58, 245, 34);
+        transition: color 0.5s ease;
+    }
     
 }

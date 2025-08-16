@@ -35,6 +35,13 @@
       listaPresentes.forEach((item, i) => {
           const li = document.createElement("div");
           li.className = "presente-card";
+
+        if(item.escolhido){
+            li.style.backgroundColor = "#f7e9e9ff"; // cor clara de destaque
+        } else {
+            li.style.backgroundColor = "#ffffff"; // cor padrão
+        };
+
           const botaoEscolher = item.escolhido
               ? `<p class="presenteEscolhido">🎁 Este presente já foi escolhido</p>`
               : `<button onclick="escolherPresente(${i})" class="botaoEscolha">Escolher</button>`;
