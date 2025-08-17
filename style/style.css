@@ -6,13 +6,18 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
-    background-color: #f5f5f5;
+    background-color: #cff4ca;
     color: #333;
 }
 
-h1 {
+.h1-Principal h1 {
     text-align: center;
-    color: #444;
+    color: #ffffff;
+    background-color: #4a9d3f;
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 5px;
+    margin-bottom: 10px;
 }
 
 .inputs {
@@ -49,7 +54,7 @@ input {
 
 .botaoDesfazer{
     padding: 10px 15px;
-    margin: 5px;
+    margin: 0 auto;
     border: none;
     border-radius: 5px;
     background-color: #ff2a2a;
@@ -129,6 +134,7 @@ button:hover {
     width: 100%;
     margin: 0 auto;
     max-width: 900px;
+    margin-bottom: 30px;
 }
 
 .imgCapa img{
@@ -145,13 +151,12 @@ button:hover {
     width: 100%;
     align-items: center; 
     margin: 0 auto;
-    background-color: #cff4ca;
-     gap: 20px; 
+    gap: 20px; 
 }
 
 .infosPedido{
     width: 90%;
-    background-color: #a2a2a2;
+    background-color: #96da8d;
     margin: 0 auto;
     padding: 10px;
     border-radius: 10px;
@@ -163,6 +168,7 @@ button:hover {
     font-size: 15px;
     color: #1e1e1e;
     text-align: justify;
+    line-height: 1.5;
 }
 
 .infosPedido h1{
@@ -184,6 +190,7 @@ button:hover {
     font-size: 20px;
     color: #fff;
     text-align: justify;
+    line-height: 1.5;
 }
 
 /* Ajustes específicos para telas pequenas */
@@ -276,9 +283,10 @@ button:hover {
         transition: background-color 0.5s ease;
     }
 
-    h1{
+    .h1-Principal h1{
         margin-top: 0;
-        font-size: 30px;
+        font-size: 25px;
+        padding: 5px;
     }
 
     .presente-img {
