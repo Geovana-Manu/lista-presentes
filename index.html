@@ -1,69 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Presentes</title>
-    <link rel="stylesheet" href="./style/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
-    <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-database-compat.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <title>Lista de Presentes</title>
+        <link rel="stylesheet" href="./style/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Link emailJS-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        
+        <!--Link firebase-->
+        <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-database-compat.js"></script>
 
-</head>
-<body>
+    </head>
+    <body>
 
-    <div class="infos">
-        <div class="imgCapa"><!--img padrao-->
-            <img src="./img/Imagem do WhatsApp de 2025-08-16 à(s) 14.45.19_bc774b47.jpg" alt="">
+        <div class="infos"><!--Div principal de informações-->
+            <div class="imgCapa"><!--img padrao-->
+                <img src="./img/Imagem do WhatsApp de 2025-08-16 à(s) 14.45.19_bc774b47.jpg" alt="">
+            </div>
+
+            <div class="textoGratidao"><!--texto de agradecimento-->
+            <p>Estamos vivendo um momento muito especial e seria uma imensa alegria tê-lo conosco para celebrar
+                    esta nova fase. Se você desejar e puder nos presentear, elaboramos uma lista com sugestões do que precisamos para montar nossa casa com carinho. Ao lado de cada item, você encontrará a frase <strong>“sugestão de loja” — basta clicar para ser redirecionado à página de compra.</strong>
+                    Também indicamos o status do presente, informando se ele já foi escolhido ou não. 
+                    <strong>Sinta-se à vontade para comprar onde preferir; está lista  é apenas uma referência.</strong>
+                </p> 
+                <p>Queremos lembrar que a sua presença e carinho são o nosso maior presente!
+                    Fique à vontade — não é uma obrigação, mas uma sugestão para aqueles que desejam 
+                    contribuir de alguma maneira.
+                </p>
+                <p>No dia do casamento teremos uma mesa disponível onde você poderá deixar o seu presente!</p>
+            </div>
+            
+            <div class="infosPedido"><!--Informação de escolha do presente-->
+            <h1>Informações para realizar a escolha dos presentes</h1> 
+            <p><strong>Atenção!</strong> Antes de selecionar o seu presente, por favor, preencha as caixinhas 
+                    abaixo com seu nome completo e seu e-mail. Isso é importante para que possamos enviar uma confirmação 
+                    de que seu presente foi escolhido corretamente!
+                </p>
+                <p>Caso você opte por um presente diferente ou deseje trocar sua escolha, basta digitar seu nome e
+                    sobrenome novamente e clicar no botão <strong>Desfazer escolha</strong>. Assim, o presente escolhido voltará novamente
+                    para a lista, permitindo que você escolha outro presente que desejar!
+                </p>
+            </div>
+            
         </div>
 
-        <div class="textoGratidao"><!--texto de agradecimento-->
-           <p>Estamos vivendo um momento muito especial e seria uma imensa alegria tê-lo conosco para celebrar
-                esta nova fase. Se você desejar e puder nos presentear, elaboramos uma lista com sugestões do que precisamos para montar nossa casa com carinho. Ao lado de cada item, você encontrará a frase <strong>“sugestão de loja” — basta clicar para ser redirecionado à página de compra.</strong>
-                Também indicamos o status do presente, informando se ele já foi escolhido ou não. 
-                <strong>Sinta-se à vontade para comprar onde preferir; está lista  é apenas uma referência.</strong>
-            </p> 
-            <p>Queremos lembrar que a sua presença e carinho são o nosso maior presente!
-                Fique à vontade — não é uma obrigação, mas uma sugestão para aqueles que desejam 
-                contribuir de alguma maneira.
-            </p>
-            <p>No dia do casamento teremos uma mesa disponível onde você poderá deixar o seu presente!</p>
+
+        <hr>
+        <div class="h1-Principal"><!--Titulo lista de prsentes-->
+        <h1>Lista de Presentes</h1> 
         </div>
         
-        <div class="infosPedido">
-           <h1>Informações para realizar a escolha dos presentes</h1> 
-           <p><strong>Atenção!</strong> Antes de selecionar o seu presente, por favor, preencha as caixinhas 
-                abaixo com seu nome completo e seu e-mail. Isso é importante para que possamos enviar uma confirmação 
-                de que seu presente foi escolhido corretamente!
-            </p>
-            <p>Caso você opte por um presente diferente ou deseje trocar sua escolha, basta digitar seu nome e
-                sobrenome novamente e clicar no botão <strong>Desfazer escolha</strong>. Assim, o presente escolhido voltará novamente
-                para a lista, permitindo que você escolha outro presente que desejar!
-            </p>
+        <div class="inputs"><!--Inputs da lista de presentes-->
+            <input type="text" id="nomePessoa" placeholder="Digite seu nome">
+            <input type="email" id="emailPessoa" placeholder="Digite seu e-mail">
         </div>
-        
-    </div>
 
+        <div class="acoes-gerais"><!--Botao de desfazer escolha-->
+            <button onclick="desfazerEscolha()" class="botaoDesfazer">Desfazer Escolha</button>
+        </div>
 
-    <hr>
-    <div class="h1-Principal"><!--Titulo lista de prsentes-->
-       <h1>Lista de Presentes</h1> 
-    </div>
-    
-    <div class="inputs">
-        <input type="text" id="nomePessoa" placeholder="Digite seu nome">
-        <input type="email" id="emailPessoa" placeholder="Digite seu e-mail">
-    </div>
+        <div class="lista-presentes" id="itens"></div><!--Lista principal de presentes-->
 
-    <div class="acoes-gerais">
-        <button onclick="desfazerEscolha()" class="botaoDesfazer">Desfazer Escolha</button>
-    </div>
+        <footer>Desenvolvido por Geovana Manoeli</footer><!--Rodapé-->
 
-    <div class="lista-presentes" id="itens"></div>
+        <!--Link script-->
+        <script src="./script/script.js"></script>
 
-    <!-- EmailJS SDK clássico -->
-    <script src="./script/script.js"></script>
-
-</body>
+    </body>
 </html>
