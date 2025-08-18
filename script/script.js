@@ -34,6 +34,8 @@
         return;
     }
 
+     const nomeAtual = document.getElementById("nomePessoa").value.trim().toLowerCase();
+
     listaPresentes.forEach((item, i) => {
         const li = document.createElement("div");
         li.className = "presente-card";
@@ -44,6 +46,8 @@
             li.style.backgroundColor = "#ffffff"; // cor padrão
         }
 
+         li.style.backgroundColor = item.escolhido ? "#f7e9e9ff" : "#ffffff";
+
         let botaoEscolher = '';
         let botaoDesfazer = '';
 
@@ -51,7 +55,7 @@
             botaoEscolher = `<p class="presenteEscolhido">🎁 Este presente já foi escolhido</p>`;
 
             // 🔹 Botão "Desfazer Escolha" só aparece se o presente foi escolhido pelo usuário atual
-            const nomeAtual = document.getElementById("nomePessoa").value.trim().toLowerCase();
+            botaoDesfazer = `<button onclick="desfazerEscolha(${i}, '${nomeAtual}')" class="botaoDesfazer">Desfazer Escolha</button>`;
             if(item.pessoa === nomeAtual) {
                 botaoDesfazer = `<button onclick="desfazerEscolha()" class="botaoDesfazer">Desfazer Escolha</button>`;
             }
@@ -107,10 +111,18 @@
 
   function desfazerEscolha() {
       const nomeAtual = document.getElementById("nomePessoa").value.trim().toLowerCase();
-      if (!nomeAtual || !validarNomeCompleto(nomeAtual)) { alert("Digite seu nome completo!"); return; }
+
+      if (!nomeAtual || !validarNomeCompleto(nomeAtual)){ 
+        alert("Digite seu nome completo!"); 
+            return; 
+    }
 
       const index = listaPresentes.findIndex(item => item.escolhido && item.pessoa === nomeAtual);
-      if (index === -1) { alert("Nenhum presente encontrado."); return; }
+
+      if(index === -1) {
+        alert("Apenas quem escolheu este presente pode desfazer a escolha!");
+        return;
+    }
 
       listaPresentes[index].escolhido = false;
       listaPresentes[index].pessoa = null;
