@@ -85,13 +85,13 @@
         .catch(err => console.error(err));
     }
 
-    atualizarListaDoJSON();
-
   function salvarNoFirebase() {
       dbRef.set(listaPresentes)
           .then(() => console.log("Lista atualizada no Firebase"))
           .catch(err => console.error(err));
   }
+
+//   salvarNoFirebase();
 
   function escolherPresente(index) {
       const nomePessoa = document.getElementById("nomePessoa").value.trim();
