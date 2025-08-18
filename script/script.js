@@ -25,55 +25,67 @@
       return nome.trim().split(" ").length >= 2;
   }
 
-  function mostrarLista() {
-    const ul = document.getElementById("itens");
-    ul.innerHTML = "";
+    function mostrarLista() {
+        const ul = document.getElementById("itens");
+        ul.innerHTML = "";
 
-    if (!listaPresentes || listaPresentes.length === 0) {
-        ul.innerHTML = "<p style='text-align:center;color:gray;'>Nenhum presente disponível</p>";
-        return;
+        if (!listaPresentes || listaPresentes.length === 0) {
+            ul.innerHTML = "<p style='text-align:center;color:gray;'>Nenhum presente disponível</p>";
+            return;
+        }
+
+        const nomeAtual = document.getElementById("nomePessoa").value.trim().toLowerCase();
+
+        listaPresentes.forEach((item, i) => {
+            const li = document.createElement("div");
+            li.className = "presente-card";
+
+            if(item.escolhido){
+                li.style.backgroundColor = "#f7e9e9ff"; // cor clara de destaque
+            } else {
+                li.style.backgroundColor = "#ffffff"; // cor padrão
+            }
+
+            li.style.backgroundColor = item.escolhido ? "#f7e9e9ff" : "#ffffff";
+
+            let botaoEscolher = '';
+            let botaoDesfazer = '';
+
+            if(item.escolhido){
+                botaoEscolher = `<p class="presenteEscolhido">🎁 Este presente já foi escolhido</p>`;
+
+                // 🔹 Botão "Desfazer Escolha" só aparece se o presente foi escolhido pelo usuário atual
+                botaoDesfazer = `<button onclick="desfazerEscolha(${i}, '${nomeAtual}')" class="botaoDesfazer">Desfazer Escolha</button>`;
+                if(item.pessoa === nomeAtual) {
+                    botaoDesfazer = `<button onclick="desfazerEscolha()" class="botaoDesfazer">Desfazer Escolha</button>`;
+                }
+            } else {
+                botaoEscolher = `<button onclick="escolherPresente(${i})" class="botaoEscolha">Escolher</button>`;
+            }
+
+            li.innerHTML = `
+                <img src="${item.imagem}" alt="${item.nome}" class="presente-img">
+                <strong>${item.nome}</strong><br>
+                ${botaoEscolher}
+                ${botaoDesfazer}
+                <a href="${item.sugestao}" target="_blank">Ver sugestão</a>
+            `;
+            ul.appendChild(li);
+        });
     }
 
-     const nomeAtual = document.getElementById("nomePessoa").value.trim().toLowerCase();
+    function atualizarListaDoJSON() {
+        fetch("https://raw.githubusercontent.com/Geovana-Manu/lista-presentes/main/presentes.json")
+        .then(res => res.json())
+        .then(data => {
+            listaPresentes = data.map(p => ({ ...p, escolhido: false, pessoa: null }));
+            mostrarLista();
+            salvarNoFirebase(); // opcional
+        })
+        .catch(err => console.error(err));
+    }
 
-    listaPresentes.forEach((item, i) => {
-        const li = document.createElement("div");
-        li.className = "presente-card";
-
-        if(item.escolhido){
-            li.style.backgroundColor = "#f7e9e9ff"; // cor clara de destaque
-        } else {
-            li.style.backgroundColor = "#ffffff"; // cor padrão
-        }
-
-         li.style.backgroundColor = item.escolhido ? "#f7e9e9ff" : "#ffffff";
-
-        let botaoEscolher = '';
-        let botaoDesfazer = '';
-
-        if(item.escolhido){
-            botaoEscolher = `<p class="presenteEscolhido">🎁 Este presente já foi escolhido</p>`;
-
-            // 🔹 Botão "Desfazer Escolha" só aparece se o presente foi escolhido pelo usuário atual
-            botaoDesfazer = `<button onclick="desfazerEscolha(${i}, '${nomeAtual}')" class="botaoDesfazer">Desfazer Escolha</button>`;
-            if(item.pessoa === nomeAtual) {
-                botaoDesfazer = `<button onclick="desfazerEscolha()" class="botaoDesfazer">Desfazer Escolha</button>`;
-            }
-        } else {
-            botaoEscolher = `<button onclick="escolherPresente(${i})" class="botaoEscolha">Escolher</button>`;
-        }
-
-        li.innerHTML = `
-            <img src="${item.imagem}" alt="${item.nome}" class="presente-img">
-            <strong>${item.nome}</strong><br>
-            ${botaoEscolher}
-            ${botaoDesfazer}
-            <a href="${item.sugestao}" target="_blank">Ver sugestão</a>
-        `;
-        ul.appendChild(li);
-    });
-}
-
+    atualizarListaDoJSON();
 
   function salvarNoFirebase() {
       dbRef.set(listaPresentes)
@@ -133,12 +145,15 @@
 
   // Inicializar exibição
   window.onload = () => {
-    dbRef.on("value", snapshot => { // <- Agora ouve em tempo real
-        if (snapshot.exists()) {
-            listaPresentes = snapshot.val();
-            mostrarLista();
+    dbRef.on("value", snapshot => {
+    if (snapshot.exists()) {
+        const data = snapshot.val();
+
+        // Se vier como objeto, transforma em array
+        listaPresentes = Array.isArray(data) ? data : Object.values(data);
+        mostrarLista();
         } else {
-            fetch("https://raw.githubusercontent.com/Geovana-Manu/lista-presentes/acc3f682e04412ad4c374bde27b85aefcd0b0e9c/presentes.json")
+            fetch("https://raw.githubusercontent.com/Geovana-Manu/lista-presentes/main/presentes.json")
                 .then(res => res.json())
                 .then(data => {
                     listaPresentes = data.map(p => ({ ...p, escolhido: false, pessoa: null }));
