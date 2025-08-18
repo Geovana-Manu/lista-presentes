@@ -6,7 +6,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
-    background-color: #cff4ca;
+    background-color: #f1ffea;
     color: #333;
 }
 
@@ -137,7 +137,7 @@ button:hover {
     width: 100%;
     margin: 0 auto;
     max-width: 900px;
-    margin-bottom: 70px;
+    margin-bottom: 10px;
 }
 
 .imgCapa img{
@@ -145,7 +145,7 @@ button:hover {
     height: auto;
     display: block;
     max-width: 400px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    /* box-shadow: 0 4px 20px rgba(0,0,0,0.1); */
 }
 
 .infos{
@@ -160,24 +160,25 @@ button:hover {
 
 .infosPedido{
     width: 90%;
-    background-color: #96da8d;
+    /* background-color: #96da8d; */
     margin: 0 auto;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     margin-bottom: 30px;
 }
 
 .infosPedido p{
+    font-family: "Charm", cursive;
     width: 100%;
-    font-size: 15px;
+    font-size: 25px;
     color: #1e1e1e;
     text-align: justify;
     line-height: 1.5;
 }
 
 .infosPedido h1{
-    font-size: 18px;
+    font-family: "Charm", cursive;
+    font-size: 25px;
     color: black;
 }
 
@@ -185,18 +186,18 @@ button:hover {
     width: 90%;
     height: auto;
     text-align: center;
-    background-color: #54834e;
+    /* background-color: #7fbd76; */
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
     margin-bottom: 30px;
 }
 
 .textoGratidao p{
-    font-family: "Bodoni Moda", serif;
+    font-family: "Charm", cursive;
     width: 100%;
-    font-size: 20px;
-    color: #fff;
+    font-size: 25px;
+    color: #000000;
     text-align: justify;
     line-height: 1.5;
 }
