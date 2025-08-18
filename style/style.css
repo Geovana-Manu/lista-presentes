@@ -16,10 +16,9 @@ body {
 
 .h1-Principal h1 {
     text-align: center;
-    color: #ffffff;
-    background-color: #dcbd1c;
+    color: #1a730f;
     border-radius: 10px;
-    font-size: 25px;
+    font-size: 35px;
     padding: 5px;
     margin-bottom: 20px;
 }
@@ -216,6 +215,10 @@ footer{
     border-radius: 2px;
 }
 
+#spinner{
+    color: #ffffff;
+}
+
 /* Ajustes específicos para telas pequenas */
 @media (max-width: 768px) {
     body {
@@ -308,7 +311,7 @@ footer{
 
     .h1-Principal h1{
         margin-top: 0;
-        font-size: 25px;
+        font-size: 30px;
         padding: 5px;
     }
 

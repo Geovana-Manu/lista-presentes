@@ -26,34 +26,50 @@
   }
 
   function mostrarLista() {
-      const ul = document.getElementById("itens");
-      ul.innerHTML = "";
-      if (!listaPresentes || listaPresentes.length === 0) {
-          ul.innerHTML = "<p style='text-align:center;color:gray;'>Nenhum presente disponível</p>";
-          return;
-      }
-      listaPresentes.forEach((item, i) => {
-          const li = document.createElement("div");
-          li.className = "presente-card";
+    const ul = document.getElementById("itens");
+    ul.innerHTML = "";
+
+    if (!listaPresentes || listaPresentes.length === 0) {
+        ul.innerHTML = "<p style='text-align:center;color:gray;'>Nenhum presente disponível</p>";
+        return;
+    }
+
+    listaPresentes.forEach((item, i) => {
+        const li = document.createElement("div");
+        li.className = "presente-card";
 
         if(item.escolhido){
             li.style.backgroundColor = "#f7e9e9ff"; // cor clara de destaque
         } else {
             li.style.backgroundColor = "#ffffff"; // cor padrão
-        };
+        }
 
-          const botaoEscolher = item.escolhido
-              ? `<p class="presenteEscolhido">🎁 Este presente já foi escolhido</p>`
-              : `<button onclick="escolherPresente(${i})" class="botaoEscolha">Escolher</button>`;
-          li.innerHTML = `
-              <img src="${item.imagem}" alt="${item.nome}" class="presente-img">
-              <strong>${item.nome}</strong><br>
-              ${botaoEscolher}
-              <a href="${item.sugestao}" target="_blank">Ver sugestão</a>
-          `;
-          ul.appendChild(li);
-      });
-  }
+        let botaoEscolher = '';
+        let botaoDesfazer = '';
+
+        if(item.escolhido){
+            botaoEscolher = `<p class="presenteEscolhido">🎁 Este presente já foi escolhido</p>`;
+
+            // 🔹 Botão "Desfazer Escolha" só aparece se o presente foi escolhido pelo usuário atual
+            const nomeAtual = document.getElementById("nomePessoa").value.trim().toLowerCase();
+            if(item.pessoa === nomeAtual) {
+                botaoDesfazer = `<button onclick="desfazerEscolha()" class="botaoDesfazer">Desfazer Escolha</button>`;
+            }
+        } else {
+            botaoEscolher = `<button onclick="escolherPresente(${i})" class="botaoEscolha">Escolher</button>`;
+        }
+
+        li.innerHTML = `
+            <img src="${item.imagem}" alt="${item.nome}" class="presente-img">
+            <strong>${item.nome}</strong><br>
+            ${botaoEscolher}
+            ${botaoDesfazer}
+            <a href="${item.sugestao}" target="_blank">Ver sugestão</a>
+        `;
+        ul.appendChild(li);
+    });
+}
+
 
   function salvarNoFirebase() {
       dbRef.set(listaPresentes)
@@ -68,6 +84,8 @@
       if (!emailPessoa) { alert("Digite e-mail!"); return; }
 
       const presente = listaPresentes[index];
+        //spiner
+      document.getElementById("spinner").classList.remove("d-none");
 
       emailjs.send("service_8d53mgc", "template_m1chzjv", {
           pessoa_nome: nomePessoa,
@@ -81,7 +99,10 @@
           salvarNoFirebase();
       }, (error) => {
           alert("Erro ao enviar e-mail: " + JSON.stringify(error));
-      });
+      }).finally(() => {
+        //spiner;
+        document.getElementById("spinner").classList.add("d-none");
+    });
   }
 
   function desfazerEscolha() {
