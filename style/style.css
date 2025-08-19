@@ -6,19 +6,31 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
-    background-color: #f1ffea;
+    margin-top: 30px;
+    background-color: #f0f2ed;
     color: #333;
 }
 
+.tituloo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .h1-Principal{
+    width: 90%;
     margin-top: 30px;
+    margin: 0 auto;
 }
 
 .h1-Principal h1 {
+    font-family: "Caveat", cursive;
     text-align: center;
     color: #1a730f;
     border-radius: 10px;
-    font-size: 35px;
+    font-size: 50px;
     padding: 5px;
     margin-bottom: 20px;
 }
@@ -167,6 +179,10 @@ button:hover {
     margin-bottom: 30px;
 }
 
+.infosPedido hr{
+    margin-bottom: 60px;
+}
+
 .infosPedido p{
     font-family: "Charm", cursive;
     width: 100%;
@@ -190,7 +206,7 @@ button:hover {
     padding: 25px;
     border-radius: 10px;
     /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .textoGratidao p{
