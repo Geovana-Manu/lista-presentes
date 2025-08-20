@@ -86,7 +86,7 @@
           .catch(err => console.error(err));
   }
 
-//   salvarNoFirebase();
+salvarNoFirebase();
 
   function escolherPresente(index) {
       const nomePessoa = document.getElementById("nomePessoa").value.trim();
