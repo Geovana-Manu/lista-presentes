@@ -46,22 +46,17 @@
                 li.style.backgroundColor = "#ffffff"; // cor padrão
             }
 
-            li.style.backgroundColor = item.escolhido ? "#f7e9e9ff" : "#ffffff";
-
             let botaoEscolher = '';
             let botaoDesfazer = '';
 
-            if(item.escolhido){
+            if (item.escolhido) {
                 botaoEscolher = `<p class="presenteEscolhido">🎁 Este presente já foi escolhido</p>`;
-
-                // 🔹 Botão "Desfazer Escolha" só aparece se o presente foi escolhido pelo usuário atual
-                botaoDesfazer = `<button onclick="desfazerEscolha(${i}, '${nomeAtual}')" class="botaoDesfazer">Desfazer Escolha</button>`;
-                if(item.pessoa === nomeAtual) {
-                    botaoDesfazer = `<button onclick="desfazerEscolha()" class="botaoDesfazer">Desfazer Escolha</button>`;
-                }
+            if (item.pessoa === nomeAtual && nomeAtual !== "") {
+                botaoDesfazer = `<button onclick="desfazerEscolha()" class="botaoDesfazer">Desfazer Escolha</button>`;
+            }
             } else {
                 botaoEscolher = `<button onclick="escolherPresente(${i})" class="botaoEscolha">Escolher</button>`;
-            }
+            };
 
             li.innerHTML = `
                 <img src="${item.imagem}" alt="${item.nome}" class="presente-img">
@@ -145,6 +140,11 @@
 
   // Inicializar exibição
   window.onload = () => {
+
+    document.getElementById("nomePessoa").addEventListener("input", () => {
+        mostrarLista();
+    });
+
     dbRef.on("value", snapshot => {
     if (snapshot.exists()) {
         const data = snapshot.val();
