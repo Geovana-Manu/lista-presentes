@@ -79,6 +79,7 @@
         })
         .catch(err => console.error(err));
     }
+    //atualizarListaDoJSON();
 
   function salvarNoFirebase() {
       dbRef.set(listaPresentes)
@@ -86,7 +87,7 @@
           .catch(err => console.error(err));
   }
 
-//salvarNoFirebase();
+    //salvarNoFirebase();
 
   function escolherPresente(index) {
       const nomePessoa = document.getElementById("nomePessoa").value.trim();
