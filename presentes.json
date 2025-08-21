@@ -156,12 +156,6 @@
     },
 
     {
-        "nome": " Fogão Cooktop Mueller 5 Bocas Com Tripla Chama - Bivolt ",
-        "sugestao": " https://www.havan.com.br/fogao-cooktop-mueller-5-bocas-com-tripla-chama-bivolt/p ",
-        "imagem": " https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fogao-cooktop-mueller-5-bocas-com-tripla-chama_1007821.webp "
-    },
-
-    {
         "nome": " Petisqueira Stolf C/ Área De Corte Teca ",
         "sugestao": " https://www.mercadolivre.com.br/petisqueira-stolf-c-area-de-corte-teca-48x30x24cm-ref1271-cor-madeira/p/MLB24281141?pdp_filters=item_id%3AMLB3929471815&from=gshop&matt_tool=37064035&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22090354481&matt_ad_group_id=173090608076&matt_match_type=&matt_network=g&matt_device=c&matt_creative=727882733160&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735128188&matt_product_id=MLB24281141-product&matt_product_partition_id=2389547296465&matt_target_id=aud-1966981570049:pla-2389547296465&cq_src=google_ads&cq_cmp=22090354481&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22090354481&gbraid=0AAAAAD93qcA7G9BOEdjQqFzJBld9dpFwE&gclid=Cj0KCQjwzOvEBhDVARIsADHfJJRRmHe-1-OZsyZpE9hXFQfJ3-Y_k8isvHWR0tMDWKO-E4RSO5-T4_0aAoJtEALw_wcB ",
         "imagem": " https://http2.mlstatic.com/D_NQ_NP_872621-MLU70354620085_072023-O.webp "
@@ -330,8 +324,16 @@
     },
 
      {
-        "nome": " ",
-        "sugestao": " ",
-        "imagem": ""
+        "nome": " Organizador De Armário 12 Pratos Cromado Organizare",
+        "sugestao": " http://produto.mercadolivre.com.br/MLB-5354081084-organizador-de-armario-12-pratos-cromado-organizare-_JM?matt_tool=48995110&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22603531562&matt_ad_group_id=181244933895&matt_match_type=&matt_network=g&matt_device=c&matt_creative=758138322200&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=133956176&matt_product_id=MLB5354081084&matt_product_partition_id=2424443221566&matt_target_id=pla-2424443221566&cq_src=google_ads&cq_cmp=22603531562&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22603531562&gbraid=0AAAAAD93qcCsXDASH7WLDzF7iacrNQEAc&gclid=Cj0KCQjwh5vFBhCyARIsAHBx2wx1heDJQpZI9qaul5hzebZbQATzbTrJCsq6KW-ouqptoNMUgFA2WSgaAle8EALw_wcB",
+        "imagem": "https://http2.mlstatic.com/D_NQ_NP_957735-MLB83530411416_042025-O-organizador-de-armario-12-pratos-cromado-organizare.webp"
+    },
+
+     {
+        "nome": "Tábua Universal Tramontina Daily em Madeira com Cabo Reto ",
+        "sugestao": " https://www.tramontina.com.br/tabua-universal-tramontina-daily-em-madeira-com-cabo-reto/10478043.html",
+        "imagem": "https://assets.tramontina.com.br/upload/tramon/imagens/BEL/10478043PDM001G.jpg"
     }
+
+
 ]
