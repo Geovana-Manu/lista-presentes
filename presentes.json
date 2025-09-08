@@ -128,7 +128,7 @@
     {
         "nome": "Cortador Multifuncional De Alimentos Top Chef - 418636-1 ",
         "sugestao": " https://www.havan.com.br/cortador-multifuncional-de-alimentos-top-chef-16-peas/p ",
-        "imagem": " Cortador Multifuncional De Alimentos Top Chef - 16 Peças 418636-1 Pular para o final da galeria de imagens"
+        "imagem": " https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/c/o/cortador-multifuncional-de-alimentos-top-chef_1056163.webp"
     },
 
     {
@@ -165,12 +165,6 @@
         "nome": " Petisqueira Madeira Teca Com Porcelanas Cor Marrom 5 cavidades, 31 cm, 31 cm ",
         "sugestao": " https://www.mercadolivre.com.br/petisqueira-madeira-teca-com-porcelanas-cor-marrom/p/MLB26724259?pdp_filters=item_id%3AMLB3498363689&from=gshop&matt_tool=37064035&matt_internal_campaign_id=&matt_word=&matt_source=google&matt_campaign_id=22090354481&matt_ad_group_id=173090608076&matt_match_type=&matt_network=g&matt_device=c&matt_creative=727882733160&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735125422&matt_product_id=MLB26724259-product&matt_product_partition_id=2391327071659&matt_target_id=aud-1966981570049:pla-2391327071659&cq_src=google_ads&cq_cmp=22090354481&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22090354481&gbraid=0AAAAAD93qcA7G9BOEdjQqFzJBld9dpFwE&gclid=Cj0KCQjwzOvEBhDVARIsADHfJJSrDxBq07QQYMrI804mrJI2XfrGt2zyby9EvPNxSMxOUskcPJVfFPIaAqrqEALw_wcB ",
         "imagem": " https://http2.mlstatic.com/D_NQ_NP_879443-MLU77967695401_072024-O.webp "
-    },
-
-    {
-        "nome": " Jogo De Xícaras Com Pires Opaline Milano 190Ml Havan Casa 12 Pçs - Branco ",
-        "sugestao": " https://www.havan.com.br/jogo-de-xicaras-com-pires-opaline-milano-190ml-havan-casa-12-pcs-branco/p ",
-        "imagem": " https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/j/o/jogo-de-xicaras-com-pires-opaline-milano-190ml-havan-casa-12-pcs_1030352.webp "
     },
 
     {
@@ -334,5 +328,17 @@
         "nome": "Aspirador De Pó Vertical Philco 2 Em 1 PAS1600P 1,5 Litros 127v",
         "sugestao": "https://www.havan.com.br/aspirador-de-po-vertical-philco-2-em-1-pas1600p-1-5-litros/p ",
         "imagem": "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/a/s/aspirador-de-po-vertical-philco-2-em-1-pas1600p-1-5-litros_1165888_1.webp"
+    },
+
+    {
+        "nome":"Fogão Cooktop Mueller 5 Bocas Com Tripla Chama - Bivolt",
+        "sugestao":"https://www.havan.com.br/fogao-cooktop-mueller-5-bocas-com-tripla-chama-bivolt/p?utm_source=share",
+        "imagem":"https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fogao-cooktop-mueller-5-bocas-com-tripla-chama_1007821.webp"
+    },
+
+    {
+        "nome":"Panificadora Britânia Digital 12 Programas 3L BPNE01",
+        "sugestao":"https://m.magazineluiza.com.br/panificadora-britania-digital-12-programas-3l-bpne01/p/ge7998j334/ep/pani/?&gad_campaignid=22579406794&gad_source=1&gbraid=0AAAAAD4zZmSriJA1ItsWkElFofpyFZ8yK&gclid=CjwKCAjw2vTFBhAuEiwAFaScwhf2NEp-29RWNddNcgGS0MZzCHvXxxXnvi49PY-vwU_rzL6BhSwmkRoCaN8QAvD_BwE&gclsrc=aw.ds&partner_id=79696&seller_id=britaniaoficial&utm_campaign=google_eco_per_ven_pla_arp_apo_3p_ep-csp&utm_content=&utm_medium=cpc&utm_source=google&utm_term=79696?partner_id=64853&utm_source=pdp_desk&utm_medium=share",
+        "imagem":"https://m.magazineluiza.com.br/a-static/420x420/panificadora-britania-digital-12-programas-3l-bpne01/britaniaoficial/23606/47c6853161a06f38de37e05492cb13a3.jpeg"
     }
 ]
