@@ -79,7 +79,7 @@
         })
         .catch(err => console.error(err));
     }
-    //atualizarListaDoJSON();
+    atualizarListaDoJSON();
 
   function salvarNoFirebase() {
       dbRef.set(listaPresentes)
